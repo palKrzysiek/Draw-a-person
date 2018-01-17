@@ -29,23 +29,31 @@ form{
 
 .result{
 	position: absolute;
-	left: 60%;
+	right: 10%;
 	top: 50px;
-	width: 500px;
-	height: 300px;
+	width: 40%;
+	height: 100px;
 	border: 1px solid black;
 	font-family: arial;
 	font-size: 30px;
 	padding: 15px;
 }
 
-.hidden1, .hidden2, .hidden3, .hidden4, .hidden5 {
-	display: none;
-}
-.onDisplay1, .onDisplay2, .onDisplay3, .onDisplay4, .onDisplay5 {
-	display: block;
+
+@media only screen and (max-width: 500px) {
+	
+	form{
+		width: 80%;
+		margin: 10%;
+	}
+	.result{
+		position: static;
+		width: 80%;
+		margin: auto;
+	}
+	
 }
 
-form div:first-of-type {
-	color: blue;
-}
+
+
+

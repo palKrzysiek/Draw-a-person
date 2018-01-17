@@ -102,20 +102,15 @@ $(function() {
 				var item = tab[Math.floor(Math.random()*(tab.length))];
 				switch(item){
 						
-					case "1": $('.result').html("Adam");
-						console.log(item);
+					case "1": $('.result').html("Wylosowano Adama!");
 						break;
-					case "2": $('.result').html("Kamil");
-						console.log(item);
+					case "2": $('.result').html("Wylosowano Kamila!");
 						break;
-					case "3": $('.result').html("Michał");
-						console.log(item);
+					case "3": $('.result').html("Wylosowano Michała!");
 						break;
-					case "4": $('.result').html("Renata");
-						console.log(item);
+					case "4": $('.result').html("Wylosowano Renatę!");
 						break;
-					case "5": $('.result').html("Kasia");
-						console.log(item);
+					case "5": $('.result').html("Wylosowano Kasię!");
 						break;
 						
 				}
