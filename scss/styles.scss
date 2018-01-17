@@ -1,0 +1,51 @@
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: arial;}
+
+
+form{
+	margin: 50px;
+	border: 1px solid black;
+	width: 40%;
+	padding: 10px;
+	padding-bottom: 50px;
+	
+	position: relative;
+	label{
+		margin-left: 2%;
+	}
+	input{
+		position: absolute;
+		left: 28%;
+		}
+	#roll{
+		left: 70%;
+		width: 20%;
+		bottom:5%;
+		height: 30px;
+	}
+}
+
+.result{
+	position: absolute;
+	left: 60%;
+	top: 50px;
+	width: 500px;
+	height: 300px;
+	border: 1px solid black;
+	font-family: arial;
+	font-size: 30px;
+	padding: 15px;
+}
+
+.hidden1, .hidden2, .hidden3, .hidden4, .hidden5 {
+	display: none;
+}
+.onDisplay1, .onDisplay2, .onDisplay3, .onDisplay4, .onDisplay5 {
+	display: block;
+}
+
+form div:first-of-type {
+	color: blue;
+}

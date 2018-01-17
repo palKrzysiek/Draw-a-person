@@ -1,0 +1,50 @@
+/* line 1, scss/styles.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial; }
+
+/* line 7, scss/styles.scss */
+form {
+  margin: 50px;
+  border: 1px solid black;
+  width: 40%;
+  padding: 10px;
+  padding-bottom: 50px;
+  position: relative; }
+  /* line 15, scss/styles.scss */
+  form label {
+    margin-left: 2%; }
+  /* line 18, scss/styles.scss */
+  form input {
+    position: absolute;
+    left: 28%; }
+  /* line 22, scss/styles.scss */
+  form #roll {
+    left: 70%;
+    width: 20%;
+    bottom: 5%;
+    height: 30px; }
+
+/* line 30, scss/styles.scss */
+.result {
+  position: absolute;
+  left: 60%;
+  top: 50px;
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+  font-family: arial;
+  font-size: 30px;
+  padding: 15px; }
+
+/* line 42, scss/styles.scss */
+.hidden1, .hidden2, .hidden3, .hidden4, .hidden5 {
+  display: none; }
+
+/* line 45, scss/styles.scss */
+.onDisplay1, .onDisplay2, .onDisplay3, .onDisplay4, .onDisplay5 {
+  display: block; }
+
+/*# sourceMappingURL=styles.css.map */
