@@ -1,119 +1,120 @@
+//Choose how many people
 
-const personElement = $(`.personElement`).val()
+const divTable = new Array; 
+divTable[0]= original;
+let i=1
+
+function cloning() {
+	
+	const original = $('#original');
+	const clone = original.clone();
+	clone.attr("id","copy"+i);
+	divTable[i] = clone;
+	clone.appendTo("form");
+	i++;
+	};
 
 $(function() {
   $('#numerInput').on('change',function() {
 	let taken = this.value;
-	const FirstDiv =$('form > div:first-of-type')
-	const SecondDiv = $('form > div:nth-of-type(2)')
-	const ThirdDiv = $('form > div:nth-of-type(3)')
-	const FourthDiv = $('form > div:nth-of-type(4)')
-	const FifthDiv = $('form > div:nth-of-type(5)')
 	switch(taken){
 		case "5":
-			$('div:hidden').removeAttr("hidden");
+			removed = personTable.splice(0,5);
+			while(divTable.length < 5){
+			cloning();
+		}
 			break;
 		case "4":
-			FifthDiv.attr("hidden", "true");
-			FourthDiv.removeAttr("hidden");
-			ThirdDiv.removeAttr("hidden");
-			SecondDiv.removeAttr("hidden");
-			FirstDiv.removeAttr("hidden");
+			removed = personTable.splice(0,5);
+			while(divTable.length < 4)
+		{
+			cloning();
+			
+		};
+			if(divTable.length>3){
+			i=4;
+			$('#copy4').remove();
+			removed = divTable.splice(4,1);
+			}
 			break;
 		case "3":
-			FifthDiv.attr("hidden", "true");
-			FourthDiv.attr("hidden", "true");
-			ThirdDiv.removeAttr("hidden");
-			SecondDiv.removeAttr("hidden");
-			FirstDiv.removeAttr("hidden");
+			removed = personTable.splice(0,5);
+			while(divTable.length < 3)
+		{
+			cloning();
+		};
+			if(divTable.length>2){
+			i=3;
+			$('#copy4').remove();
+			$('#copy3').remove();
+			removed = divTable.splice(3,2);
+			}
 			break;
 		case "2":
-			FifthDiv.attr("hidden", "true");
-			FourthDiv.attr("hidden", "true");
-			ThirdDiv.attr("hidden", "true");
-			SecondDiv.removeAttr("hidden");
-			FirstDiv.removeAttr("hidden");
+			removed = personTable.splice(0,5);
+			while(divTable.length < 2)
+		{
+			cloning();
+			
+		};
+			if(divTable.length>1){
+			i=2;
+			$('#copy4').remove();
+			$('#copy3').remove();
+			$('#copy2').remove();
+			removed = divTable.splice(2,3);
+			}
 			break;
 		case "1":
-			FifthDiv.attr("hidden", "true");
-			FourthDiv.attr("hidden", "true");
-			ThirdDiv.attr("hidden", "true");
-			SecondDiv.attr("hidden", "true");
-			FirstDiv.removeAttr("hidden");
-			break;
-		case"0": 
+			removed = personTable.splice(0,5);
+			while(divTable.length < 1)
+		{
+			cloning();
 			
-			$('form > div').attr("hidden", "true");
-	 }
-	
-
-	  
+		};
+			if(divTable.length>0){
+			i=1;
+			$('#copy4').remove();
+			$('#copy3').remove();
+			$('#copy2').remove();
+			$('#copy1').remove();
+			removed = divTable.splice(1,4);
+			}
+			
+     		break; 
+			
+	 }  
   });
 });
-let tab = [];
-$(function() {
-	$('form > div:first-of-type .personElement').change(function() {
-		//console.log($(this).val())
-		let chosenPerson1 =$(this).val();
-		tab[0] = chosenPerson1;
-		
-				
-	 });
-});
 
-$(function() {
-	$('form > div:nth-of-type(2) .personElement').change(function() {
-		//console.log($(this).val())
-		tab[1] =$(this).val();
-		
-			
-	 });
-});
-$(function() {
-	$('form > div:nth-of-type(3) .personElement').change(function() {
-		//console.log($(this).val())
-		let chosenPerson3 =$(this).val();
-		tab[2] = chosenPerson3;
-		
-		
-	 });
-});
-$(function() {
-	$('form > div:nth-of-type(4) .personElement').change(function() {
-		//console.log($(this).val())
-		let chosenPerson4 =$(this).val();
-		tab[3] = chosenPerson4;
-		
-			
-	 });
-});
-$(function() {
-	$('form > div:nth-of-type(5) .personElement').change(function() {
-		//console.log($(this).val())
-		let chosenPerson5 =$(this).val();
-		tab[4] = chosenPerson5;
-		
-		
-	 });
-});
 
-	$( "form" ).submit(function(e) {
-				e.preventDefault();
-				var item = tab[Math.floor(Math.random()*(tab.length))];
-				switch(item){
-						
-					case "1": $('.result').html("Wylosowano Adama!");
-						break;
-					case "2": $('.result').html("Wylosowano Kamila!");
-						break;
-					case "3": $('.result').html("Wylosowano Michała!");
-						break;
-					case "4": $('.result').html("Wylosowano Renatę!");
-						break;
-					case "5": $('.result').html("Wylosowano Kasię!");
-						break;
-						
-				}
-				
-				
-			});		
+//Choose person
+
+
+
+//random person
+const personTable = new Array
+
+
+function addToArray(){
+			if($('#original input').val()){personTable[0]=$('#original input').val();}
+			if($('#copy1 input').val()){personTable[1]=$('#copy1 input').val();}
+			if($('#copy2 input').val()){personTable[2]=$('#copy2 input').val();}
+			if($('#copy3 input').val()){personTable[3]=$('#copy3 input').val();}
+			if($('#copy4 input').val()){personTable[4]=$('#copy4 input').val();}
+			}
+function roll(){
+		const randomPerson = personTable[Math.floor(Math.random()*(personTable.length))];
+		$('.result').html(randomPerson);
+		}
+ $("form").submit(function(e) {
+		e.preventDefault();
+	 	addToArray();
+	 	roll();
+		})
+
+
+//losowanie z tablicy tab
+//
+
+
